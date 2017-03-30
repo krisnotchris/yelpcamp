@@ -6,12 +6,11 @@ var express        = require("express"),
     flash          = require("connect-flash"),
     Campground     = require("./models/campground"),
     methodOverride = require("method-override"),
-    seedDB         = require("./seeds"),
     Comment        = require("./models/comment"),
     passport       = require("passport"),
     LocalStrategy  = require("passport-local")
-    
-// Requiring Routes    
+
+// Requiring Routes
 var commentRoutes    = require("./routes/comments")
 var campgroundRoutes = require("./routes/campgrounds")
 var indexRoutes      = require("./routes/index")
@@ -24,7 +23,6 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-// seedDB(); // seed the database
 
 // ===============================================
 //            PASSPORT CONFIGURATION
